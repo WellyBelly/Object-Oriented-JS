@@ -11,13 +11,12 @@
 
 ### Assignment 2:
 
-  For reviewing
   
-   Use this link to load the page: https://wellybelly.github.io/OOBP/Assignment_2/
+   - Use this link to load the page: https://wellybelly.github.io/OOBP/Assignment_2/
    
   OR
   
-   Download/Clone the repo and run the web page from a web server, due to browser security restrictions the JSON file cannot be accessed otherwise.
+   - Download/Clone the repo and run the web page from a web server, due to browser security restrictions the JSON file cannot be accessed otherwise.
    A simple way to do it:
    Make sure you have Node.js installed and then install a development server
    
