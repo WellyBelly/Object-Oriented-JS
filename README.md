@@ -27,3 +27,22 @@
     http-server
    - Then you will see a list of IPs which can be used to access that server. As far as I know this is a purely local server so you don't neet to worry.
    To stop the server simply hit CTRL + C in the terminal/console and the server is stopped.
+
+# Installation
+
+Execute `npm install` this folder to install the dependencies.
+
+# Start
+
+`node index.js` to start the template app
+
+# Editing code
+
+- ROOMS can be deleted/added/edited.
+Exits should be added using the EXIT class.
+The starting room should be pushed into the world array first.
+
+- ENEMIES can be edited/deleted/added,
+Make sure to place them in the room of your choice.
+
+- PLAYER  can be only edited! Do NOT delete the player object.
