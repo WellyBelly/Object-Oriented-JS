@@ -23,7 +23,7 @@ Make sure to place them in the room of your choice.
 
 - PLAYER can be only edited! Do NOT delete/rename the player object.
 
-### Assignment 2:
+## Assignment 2:
  
   
    - Use this link to load the page: https://wellybelly.github.io/OOBP/Assignment_2/
