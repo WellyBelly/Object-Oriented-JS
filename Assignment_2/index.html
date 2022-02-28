@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- most functions done, cart page has to be made.
+add pirce to shoppingCart (items = {name:[], price:[]})
+make one div which will be filled by each view (instead of creating + deleting each div for each view)
+instant calculation of full price.
+option to erase / decrease items from cart. -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment_2_OOBP</title>
+    <style>
+        body {
+            margin: 0;
+            margin-top: 150px;
+            background-color: #F8F6F6;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        #header {
+            position: fixed;
+            top: 0;
+            width: 100vw;
+            z-index: 0;
+            background-color: #473818;
+            display: flex;
+            justify-content: space-between;
+            height: 80px;
+            align-items: center;
+        }
+        #header .insideHeader {
+            padding-left: 50px;
+            padding-right: 50px;
+            font-size: 25px;
+            color: white;
+        }
+        #header #cart img {
+            height: 40px;
+            filter: brightness(0) invert(1);
+        }
+        #header #cart span {
+            font-size: 15px;
+        }
+        #productList {
+            display: flex;
+            margin-top: 20px;
+        }
+        #smallPic {
+            width: 400px;
+            height: 200px;
+            margin: 10px;
+            border: 1px solid #94742F;
+            box-shadow: 0px 2px 5px #94742F;
+        }
+        #buySmall {
+            background-color: #473818;
+            color: white;
+            height: 30px;
+            border-radius: 5px;
+            width: 50%;
+            margin: 10px;
+            border: 2px solid #473818;
+            font-size: 16px;
+            align-self: center;
+        }
+        #buySmall:hover {
+            font-weight: bold;
+        }
+        #productList div {
+            background-color: #E0B75E;
+            display: flex;
+            flex-direction: column;
+            margin: 10px ;
+            border: 2px solid black;
+        }
+        .smallView:hover {
+            text-decoration: underline;
+            transform: scale(1.05);
+        }
+        #nameSmall, #priceSmall {
+            align-self: center;
+            padding: 10px;
+            font-weight: bold;
+            color: #091F47;
+        }
+        #priceSmall {
+            font-weight: normal;
+        }
+        #bigPic {
+            grid-area: image;
+            max-height: 100%;
+            justify-self: center;
+            border: 1px solid #94742F;
+        }
+        #brand {
+            grid-area: brand;
+            font-size: 30px;
+            color: #091F47;
+        }
+        #description {
+            grid-area: description;
+            font-size: 20px;
+        }
+        #productDetails {
+            grid-area: info;
+        }
+        #buyDetail {
+            grid-area: buy;
+            width: 50%;
+            height: 100%;
+            background-color: #E0B75E;
+            color: #091F47;
+            border: 4px solid #94742F;
+            justify-self: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #price {
+            grid-area: price;
+            color: #2F5394;
+            font-size: 20px;
+            font-style: oblique;
+        }
+        #nameBig {
+            grid-area: name;
+            font-size: 20px;
+            color: #091F47;
+            text-decoration: underline;
+        }
+        .bigView {
+            align-self: center;
+        }
+        #bigView {
+            display: grid;
+            max-width: 100%;
+            margin-top: 20px;
+            grid-template-columns: 10% auto 25% 10%;
+            grid-template-rows: 10% 10% 15% 20% auto auto;
+            grid-template-areas: 
+                ". image brand ."
+                ". image price ."
+                ". image info ."
+                ". image buy ."
+                ". name . ."
+                ". description description .";
+            column-gap: 10px;
+            row-gap: 10px;
+        }
+        #cartProduct {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            margin-right: 40%;
+            margin-top: 50px;
+            column-gap: 20px;
+            
+        }
+        #trash {
+            height: 100%;
+            filter: invert(12%) sepia(67%) saturate(5872%) hue-rotate(359deg) brightness(89%) contrast(107%);
+        }
+        #noCart {
+            text-align: center;
+            margin-top: 100px;
+            color: #CFCFCF;
+            font-size: 40px;
+        }
+        #buyCart {
+            text-align: right;
+            margin-right: 40%;    
+            margin-top: 50px;
+            font-size: 20px;
+        }
+        .buy {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+        #sum {
+            width: 100px;
+        }
+        #priceCart {
+            width: 60px;
+        }
+        #countCart {
+            width: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body id="body">
+
+    <div id="header">
+        <div id="backButton" class="insideHeader"></div>
+        <div id="cart" class="insideHeader"></div>
+    </div>
+    
+
+    <script>
+        let shoppingCart = {
+            items: [],
+            count:[],
+            price:[]
+        };
+
+        let firstLoading = true;
+        let numberOfItems = 0;
+        const body = document.getElementById("body");        
+        const backButton = document.getElementById("backButton");
+        const cart = document.getElementById("cart")
+        
+        increaseItemcount = (i) => {
+            numberOfItems += 1;            
+            cart.children[1].style.border = "2px solid #94742F";
+            cart.children[1].style.borderRadius = "25px";
+            cart.children[1].style.padding = "2px 2px 2px 2px";
+            cart.children[1].innerHTML = numberOfItems;        
+
+            fetch('products.json').then(p => p.json()).then(p => addItem(p)).then(console.log(shoppingCart.items)).then(console.log(shoppingCart.count)).then(console.log(shoppingCart.price));
+
+            addItem = p => {
+                if (shoppingCart.items.indexOf(p[i].name) == -1) {
+                    shoppingCart.items.push(p[i].name);
+                    shoppingCart.price.push(Number(p[i].price));
+                    shoppingCart.count.push(1);
+                } else {
+                    shoppingCart.count[shoppingCart.items.indexOf(p[i].name)] += 1;
+                }                            
+            }
+        }
+
+        increaseCountCart = (i) => {
+            shoppingCart.count[i] += 1;
+            numberOfItems += 1;            
+            cartView();
+        }
+
+        decreaseCountCart = (i) => {
+            if (shoppingCart.count[i] > 1) {
+                shoppingCart.count[i] -= 1;
+                numberOfItems -= 1;                
+                cartView();
+            }
+        }
+
+        removeItem = (i) => {
+            numberOfItems -= shoppingCart.count[i];
+            shoppingCart.items.splice(i, 1);
+            shoppingCart.count.splice(i, 1);
+            shoppingCart.price.splice(i, 1);            
+            cartView();
+        }
+
+        createBackButton = () => {
+            backButton.innerHTML = "<img src=\"images/arrow-left-square.svg\" alt=\"Arrow_Back\" onclick=\"mainPage()\" id=\"arrow\">"
+            let arrow = document.getElementById("arrow");
+            arrow.style.height = "40px";
+            arrow.style.filter = "brightness(0) invert(1)";
+        }
+
+        createCartIcon = () => {
+            cart.innerHTML = "<img src=\"images/cart2.svg\" alt=\"cart\" onclick=\"cartView()\"><span id=\"itemCount\"></span>"
+        }
+
+        detailView = (i) => {
+            fetch('products.json').then(p => p.json()).then(p => createDetailedView(p));
+
+            createDetailedView = p => {
+                
+                body.children[2].remove();                
+                            
+                const detailProduct = document.createElement("div");
+                detailProduct.setAttribute("id", "detailProduct");
+                body.appendChild(detailProduct);
+
+                createBackButton();
+                
+                let divD = document.createElement("div");
+                divD.setAttribute("id", "bigView");
+                let imgBig = "<img src=\""+p[i].image+"\"/ id=\"bigPic\">";
+                let brand = "<div id=\"brand\" class=\"bigView\">"+p[i].brand+"</div>";
+                let nameBig = "<div id=\"nameBig\">"+p[i].name+"</div>"
+                let description = "<div id=\"description\">"+p[i].description+"</div>";
+                let productDetails = "<div id=\"productDetails\" class=\"bigView\">"+p[i].productDetails+"</div>";
+                let priceBig = "<div id=\"price\" class=\"bigView\">"+p[i].price+"€</div>";
+                let buyDetail = "<button onclick=\"increaseItemcount("+i+")\" id=\"buyDetail\" class=\"bigView\">ADD TO CART</button>";
+                divD.innerHTML = imgBig + brand + priceBig + nameBig + buyDetail + description + productDetails;
+                detailProduct.appendChild(divD);
+            }
+        }
+         
+        mainPage = () => {
+            fetch('products.json').then(p => p.json()).then(p => createHomepage(p));
+
+            createHomepage = p => {
+                if (firstLoading == false) {
+                    body.children[2].remove();
+                }
+                
+                const productList = document.createElement("div");
+                productList.setAttribute("id", "productList");
+                productList.style.flexWrap = 'wrap';
+                productList.style.justifyContent = "space-evenly";
+                body.appendChild(productList);
+
+                backButton.innerHTML = "Object Oriented Browser Programming"
+                createCartIcon();
+
+                for(let i=0; i < p.length; i++){
+                    let divM = document.createElement('div');
+                    let buySmall = "<button onclick=\"increaseItemcount("+i+")\" id=\"buySmall\">Add to cart</button>";
+                    let img = "<img src=\""+p[i].image+"\"/ id=\"smallPic\" onclick=\"detailView("+i+")\" class=\"smallView\">";
+                    let nameSmall = "<span id=\"nameSmall\" onclick=\"detailView("+i+")\" class=\"smallView\">"+p[i].name+"</span>"
+                    let priceSmall = "<span id=\"priceSmall\" onclick=\"detailView("+i+")\" class=\"smallView\">"+p[i].price+"€</span>";
+                    divM.innerHTML = img + nameSmall + priceSmall + buySmall;
+                    productList.appendChild(divM)
+                }
+
+                if(numberOfItems > 0){
+                    cart.children[1].style.border = "2px solid #94742F";
+                    cart.children[1].style.borderRadius = "25px";
+                    cart.children[1].style.padding = "2px 2px 2px 2px";
+                    cart.children[1].innerHTML = numberOfItems;
+                }
+                firstLoading = false;
+            }
+        }
+
+        cartView = () => {
+            
+            body.children[2].remove();
+            
+            
+                const cartProduct = document.createElement("div");
+                cartProduct.setAttribute("id", "cartContainer");
+                body.appendChild(cartProduct);
+                createBackButton();            
+
+                cart.innerHTML = "<span id=\"cartTitle\">Shopping cart</span>";
+                let cartTitle = document.getElementById("cartTitle");
+                cartTitle.style.fontSize = "30px";
+            if (shoppingCart.items.length > 0) {
+                let result = 0;
+                fetch('products.json').then(p => p.json()).then(p => createCart(p));
+                
+                createCart = p => {            
+
+                    for( let i = 0; i < shoppingCart.items.length; i++) {
+                        let divC = document.createElement('div');
+                        divC.setAttribute("id", "cartProduct");
+                        let add = "<button onclick=\"increaseCountCart("+i+")\" id=\"add\" class=\"cart\">></button>"
+                        let subtract = "<button onclick=\"decreaseCountCart("+i+")\" id=\"subtract\" class=\"cart\"><</button>"
+                        let nameCart = "<span id=\"nameCart\" class=\"cart\">"+shoppingCart.items[i]+"</span>";
+                        let countCart = "<span id=\"countCart\" class=\"cart\">"+shoppingCart.count[i]+"</span>";
+                        let priceCart = "<span id=\"priceCart\" class=\"cart\">"+shoppingCart.price[i]+"€</span>";
+                        let remove = "<img src=\"images/trash3.svg\" alt=\"remove\" onclick=\"removeItem("+i+")\" id=\"trash\">";
+                        let sum = "<span id=\"sum\" class=\"cart\">"+(shoppingCart.price[i]*shoppingCart.count[i]).toFixed(2)+"€</span>";
+                        result += Number((shoppingCart.price[i]*shoppingCart.count[i]).toFixed(2));
+                        divC.innerHTML = nameCart + remove + priceCart + subtract + countCart + add + sum;
+                        cartProduct.appendChild(divC);
+                    }
+                    
+                    let divT = document.createElement("div");
+                    divT.setAttribute("id", "buyCart")
+                    let totalSum = "<span id=\"totalSum\" class=\"buy\"></span>";
+                    let buyButton = "<form action=\"\"><input class=\"buy\" type=\"submit\" value=\"Buy for:\"></form>";
+                    divT.innerHTML = buyButton + result.toFixed(2)+"€";
+                    cartProduct.appendChild(divT);
+                    
+                }
+            } else {
+                let noCart = "<div id=\"noCart\">No items in shopping cart</div>";
+                cartProduct.innerHTML = noCart;
+            }
+        }
+
+        mainPage();
+    </script>
+</body>
+</html>
