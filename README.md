@@ -4,7 +4,7 @@
 
 ### Installation
 
-Execute `npm install` the Assignment_1 folder to install the dependencies.
+Execute `npm install` in the Assignment_1 folder to install the dependencies.
 
 ### Start
 
