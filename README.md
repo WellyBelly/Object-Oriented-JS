@@ -1,16 +1,16 @@
 # For reviewing
 
-### Assignement 1:
+## Assignement 1:
 
-#### Installation
+### Installation
 
 Execute `npm install` this folder to install the dependencies.
 
-#### Start
+### Start
 
 `node index.js` to start the template app
 
-#### Editing code
+### Editing code
 
 - ROOMS can be deleted/added/edited.
 Exits should be added using the EXIT class.
