@@ -1,0 +1,92 @@
+[   
+    {
+        "id":"1",
+        "name":"TICKET TO THE MOON ORIGINAL HAMMOCK", 
+        "price":"44.90", 
+        "description":"A hammock for two. A quality hammock for two. Made of parachute nylon, the hammock offers packable comfort and convenience for travels and treks. This model used to be called the Double Hammock. Moisture repellent material dries fast. Max. weight: 200 kg. Sleeping width: 2 meters. Machine washable in 30°C. Two year guarantee. Metal hooks at the ends for hanging - consider buying a rope set or tree friendly strap set as well",
+        "productDetails":"Measures: 290cm x 200cm. Weight: 600 g.",
+        "image":"images/Hammock.jpeg",
+        "brand":"Ticket To The Moon"
+    },
+    {
+        "id":"2",
+        "name":"OUTWELL EARTH 3", 
+        "price":"990.90", 
+        "description":"Three person tunnel tent with large awning. Space for three plus a large awning. Suitable for laid-back trips to camping grounds. Waterproof fabrics: outer tent with 3000 mm hydrostatic head, floor with 10 000 mm. Fiber glass poles (Duratec 8.5 mm). Outer and inner tent are pitched in one go - on the other hand, they can also be detached easily. Fly fabric reflects sunlight to protect from overheating. Detachable bathtub floor in vestibule. Carrying bag. Curtains at windows. Fire retardant fabric.",
+        "productDetails":"Measures: 150cm x 280cm x 100cm. Weight: 5.50 kg.",
+        "image":"images/Tent1.jpeg",
+        "brand":"Outwell"
+    },
+    {
+        "id":"3",
+        "name":"FJÄLLRÄVEN KEB ENDURANCE 3", 
+        "price":"690.90", 
+        "description":"Four season tent. 4555 grams - This tent has been weighed in Scandinavian Outdoor and the weight includes everything delivered in the package. Tunnel tent. Aluminum poles: DAC Pressfit, diameter 10.2 mm. Aluminum V pegs by DAC, size Medium. 2 mm Dyneema guylines, strength 160 kg. Adjustable ventilation scoops. The inner is automatically pitched together with the outer tent but the two can also be detached at will. Outer tent is made of a siliconized ripstop polyamide (hydrostatic head 3000 mm). Floor made of polyurethane treated polyamide (hydrostatic head 10 000 mm). The footprint/floor shown in some images is not included.",
+        "productDetails":"Measures: 120cm x 250cm x 100cm. Weight: 4.13 kg.",
+        "image":"images/Tent2.jpeg",
+        "brand":"Fjällräven"
+    },
+    {
+        "id":"4",
+        "name":"JACK WOLFSKIN LIGHTHOUSE II RT FT", 
+        "price":"640.90", 
+        "description":"Spacious and light two person tunnel tent. The Lighthouse II RT uses Jack Wolfskin Real Tunnel structure. This means the tent's walls rise vertically for a certain height before turning to the inside. This creates extra space at the exact height you'll be sleeping. FR model: Fire Retardant fly. Inner and outer tents are buttoned together and can easily be detached from each other if need should be. Four season tent. Two person model. Tunnel tent. Aluminum poles (DAC Featherlite NSL). Outer tent with three ventilation scoops. Two entrances in outer tent (see floor plan). Fly: siliconized 20D ripstop Nylon, hydrostatic head 1500 mm. Floor: siliconized 40D nylon, hydrostatic head 5000 mm. Reflectors make it easy to return to your tent after an evening excursion.",
+        "productDetails":"Measures: 130cm x 300cm x 110cm. Weight: 3.15 kg.",
+        "image":"images/Tent3.jpeg",
+        "brand":"Jack Wolfskin"
+    },
+    {
+        "id":"5",
+        "name":"SEA TO SUMMIT ULTRALIGHT HAMMOCK", 
+        "price":"54.90", 
+        "description":"Extremely light hammock. 20D Nylon material breathes extremely well. Compression stuff sack boasts space for pitching straps (straps sold separately). Aluminium buckles. Max. user weight: 135 kg.",
+        "productDetails":"Measures: 260cm x 120cm. Weight: 155 g.",
+        "image":"images/Hammock2.jpeg",
+        "brand":"Sea To Summit"
+    },
+    {
+        "id":"6",
+        "name":"JACK WOLFSKIN YELLOWSTONE III VENT", 
+        "price":"390.90", 
+        "description":"Three person dome with great vestibule space. Jack Wolfskin Yellowstone III Vent - Three person dome with great vestibule space. Rooftop ventilation. Excellent weather proofness, plenty of storm lines. Two doors and two vestibules. Inner tent with plenty of bug mesh - this helps with ventilation. Four inner pockets.",
+        "productDetails":"Measures: 140cm x 200cm x 140cm. Weight: 4.88 kg.",
+        "image":"images/Tent4.jpeg",
+        "brand":"Jack Wolfskin"
+    },
+    {
+        "id":"7",
+        "name":"HALTI XPD FINLAND 2", 
+        "price":"340.90", 
+        "description":"A popular two person tunnel with long vestibule. The XPD Finland 2 has enough vestibule space for two backpacks and two pairs of shoes. Its inner and outer tents are “buttoned” together, meaning the inner tent is safe from rain while pitching. Both ends have adjustable ventilation scoops. Thanks to its shape and guylines, the tent is stable even in windy conditions. A great choice from spring till fall!",
+        "productDetails":"Measures: 110cm x 260cm x 100cm. Weight: 3.35 kg.",
+        "image":"images/Tent5.jpeg",
+        "brand":"Halti"
+    },
+    {
+        "id":"8",
+        "name":"JACK WOLFSKIN ECLIPSE II", 
+        "price":"290.90", 
+        "description":"Affordable dome tent for two. Jack Wolfskin Eclipse II - Wolfskin quality makes this entry level tent a good choice when on a budget. Two entries and two vestibules. Thanks to their great quality to price ratio, Jack Wolfskin Eclipse tents have been among our most popular tent models for as long as they've been made.",
+        "productDetails":"Measures: 130cm x 200cm x 90cm. Weight: 4.14 kg.",
+        "image":"images/Tent6.jpeg",
+        "brand":"Jack Wolfskin"
+    },
+    {
+        "id":"9",
+        "name":"FJÄLLRÄVEN ABISKO DOME 2", 
+        "price":"540.90", 
+        "description":"Spacious and sturdy four season tent. Self standing. Fjällräven Abisko Dome 2 - Spacious an sturdy four season tent. Self standing. Room for two, and plenty of it: the inner tent is wide and high and there is a door and vestibule on both sides of the tent. Fully adjustable ventilation make for comfortable living.",
+        "productDetails":"Measures: 120cm x 200cm x 200cm. Weight: 3.62 kg.",
+        "image":"images/Tent7.jpeg",
+        "brand":"Fjällräven"
+    },
+    {   
+        "id":"10",
+        "name":"PRIMUS BIFROST H4", 
+        "price":"980.90", 
+        "description":"A high quality camping tent for up to four people. Spacious living room area in the middle and two sleeping lounges at the ends, in addition two people can sleep in the living room. Long aluminium poles cross to form a sturdy structure. The poles are color coded for easy pitching. Outer door can be pitched up horizontally to form a sunshade. Waterproof, with a 3000 mm waterproofing level in the fly and 7000 m in the floor.",
+        "productDetails":"Measures: 140cm x 260cm x 120cm. Weight: 9.30 kg.",
+        "image":"images/Tent8.jpeg",
+        "brand":"Fjällräven"
+    }
+]
