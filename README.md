@@ -22,8 +22,8 @@
    
     npm install -g http-server
     
-   -Then (from your terminal/console) go to the directory with the code/web page and run
+   - Then (from your terminal/console) go to the directory with the code/web page and run
    
     http-server
-   -Then you will see a list of IPs which can be used to access that server. As far as I know this is a purely local server so you don't neet to worry.
+   - Then you will see a list of IPs which can be used to access that server. As far as I know this is a purely local server so you don't neet to worry.
    To stop the server simply hit CTRL + C in the terminal/console and the server is stopped.
