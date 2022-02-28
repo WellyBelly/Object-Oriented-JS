@@ -1,0 +1,16 @@
+--------------------
+Self Evaluation
+Exercise 1
+I have completed xx % of the exercise requirements.
+I would give xx points out of maximum 10p.
+Here is a description of what I did not manage to complete:
+* EXAMPLE Enemies cannot attack
+* EXAMPLE Player cannot move between rooms
+
+Exercise 2
+I have completed xx % of the exercise requirements.
+I would give xx points out of maximum 10p.
+Here is a description of what I did not manage to complete:
+* EXAMPLE Product detail view cannot use data, always the same product no matter which one was clicked
+* EXAMPLE Shopping cart is static, nothing can be added
+-------------------
