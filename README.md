@@ -8,7 +8,7 @@ Execute `npm install` in the Assignment_1 folder to install the dependencies.
 
 ### Start
 
-`node index.js` to start the template app
+`node index.js` to start the game
 
 ### Editing code
 
