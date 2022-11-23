@@ -26,7 +26,7 @@ Make sure to place them in the room of your choice.
 ## Assignment 2 (Dynamic page, HTML DOM):
  
   
-   - Use this link to load the page: https://wellybelly.github.io/OOBP/Assignment_2/
+   - Use this link to load the page: [https://wellybelly.github.io/Object-Oriented-JS/Assignment_2/](https://wellybelly.github.io/Object-Oriented-JS/Assignment_2/)
    
   OR
   
